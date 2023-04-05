@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-
+import '../app/globals.css';
 import { Button, ButtonProps } from '../components/Button';
 
 export default {
@@ -52,12 +52,14 @@ export const Subtle = Template.bind({});
 Subtle.args = {
   children: 'Subtle Button',
   variant: 'subtle',
+  size: 'lg',
 };
 
 export const Ghost = Template.bind({});
 Ghost.args = {
   children: 'Ghost Button',
   variant: 'ghost',
+  size: 'sm',
 };
 
 export const LinkButton = Template.bind({});
