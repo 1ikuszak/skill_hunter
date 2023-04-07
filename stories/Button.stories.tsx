@@ -34,6 +34,7 @@ const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   children: 'Default Button',
+  size: 'default',
 };
 
 export const Destructive = Template.bind({});
@@ -46,20 +47,6 @@ export const Outline = Template.bind({});
 Outline.args = {
   children: 'Outline Button',
   variant: 'outline',
-};
-
-export const Subtle = Template.bind({});
-Subtle.args = {
-  children: 'Subtle Button',
-  variant: 'subtle',
-  size: 'lg',
-};
-
-export const Ghost = Template.bind({});
-Ghost.args = {
-  children: 'Ghost Button',
-  variant: 'ghost',
-  size: 'sm',
 };
 
 export const LinkButton = Template.bind({});

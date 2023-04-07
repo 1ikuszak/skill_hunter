@@ -1,0 +1,37 @@
+.form__group {
+  position: relative;
+  border-bottom: 1px solid var(--dark-color);
+  transition: border-bottom 0.4s ease-in-out;
+  width: fit-content;
+}
+
+.form__group input {
+  padding: 0 2px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+  transition: color 0.4s;
+}
+
+.form__group label {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  color: rgba(0, 0, 0, 0.76);
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.form__group input:focus + label,
+.form__group input:valid + label {
+  font-size: 12.8px;
+  top: -6px;
+}
+
+.form__group:hover {
+  border-bottom: 1px solid var(--secondary-color);
+}
