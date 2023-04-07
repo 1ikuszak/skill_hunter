@@ -11,30 +11,29 @@ export default async function Login() {
       <div className="flex">
         <div className="flex flex-col items-center justify-center w-1/2 h-screen">
           <div className="flex flex-col mb-10">
-            <p className="text-3xl font-bold">Good to see you again</p>
-            <p className="text-base">
-              Welcome back, please enter your details to login
-            </p>
+            <p className="text-3xl font-bold">Create and account</p>
+            <p className="text-base">Welcome, please enter your details.</p>
           </div>
 
           <form>
             <div className="flex flex-col gap-7">
               <Input name="name" type="text" _size="default" />
+              <Input name="email" type="text" _size="default" />
               <Input name="password" type="password" _size="default" />
             </div>
 
             <div className="flex flex-col mt-10 space-y-2">
               <Button variant="default" size="default">
-                Login
+                Register
               </Button>
               <Button variant="google" size="default">
-                Login with google
+                Register with google
               </Button>
             </div>
 
             <p className="mt-4 text-sm text-center">
-              Dont have account yet?{' '}
-              <a className="font-bold underline" href="/register">
+              Already have an account?{' '}
+              <a className="font-bold underline" href="/login">
                 Register now
               </a>
             </p>
@@ -48,7 +47,7 @@ export default async function Login() {
           />
         </div>
 
-        <div className="flex items-center justify-center w-1/2 h-screen bg-gradient-to-r from-purple-500 to-pink-500">
+        <div className="flex items-center justify-center w-1/2 h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
           <Image alt="logo" className="absolute" src={logo} />
         </div>
       </div>

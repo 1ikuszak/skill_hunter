@@ -9,14 +9,7 @@ export default {
     variant: {
       control: {
         type: 'radio',
-        options: [
-          'default',
-          'destructive',
-          'outline',
-          'subtle',
-          'ghost',
-          'link',
-        ],
+        options: ['default', 'destructive', 'outline', 'link', 'google'],
       },
     },
     size: {
@@ -54,4 +47,10 @@ LinkButton.args = {
   children: 'Link Button',
   variant: 'link',
   href: 'https://example.com',
+};
+
+export const Google = Template.bind({});
+Google.args = {
+  children: 'Google Button',
+  variant: 'google',
 };

@@ -51,8 +51,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ref={ref}
           {...props}
         >
-          <div>{children}</div>
           <Image src={google} alt="Google" />
+          <div>{children}</div>
         </button>
       );
     }
