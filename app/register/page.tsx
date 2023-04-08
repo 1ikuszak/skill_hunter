@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/Button';
 import { Input } from '@/components/UserInput';
 
-export default async function Login() {
+export default async function Register() {
   return (
     <div>
       <div className="flex">
@@ -34,7 +34,7 @@ export default async function Login() {
             <p className="mt-4 text-sm text-center">
               Already have an account?{' '}
               <a className="font-bold underline" href="/login">
-                Register now
+                Login now
               </a>
             </p>
           </form>

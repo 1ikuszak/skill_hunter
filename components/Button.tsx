@@ -6,19 +6,19 @@ import { cn } from '../lib/utils';
 import google from '../public/google_logo.svg';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded text-sm font-medium transition-colors focus:outline-none hover:bg-slate-900 disabled:opacity-50 disabled:pointer-events-none',
+  'inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus:outline-none hover:bg-slate-900 disabled:opacity-50 disabled:pointer-events-none',
   {
     variants: {
       variant: {
         default: 'bg-neutral-950 text-white hover:bg-neutral-800',
         destructive: 'bg-red-500 text-white hover:bg-red-600',
         outline:
-          'bg-transparent border text-dark border-dark hover:bg-slate-100',
+          'bg-transparent border text-dark border-dark hover:bg-transparent hover:font-bold',
         link: 'bg-transparent underline-offset-4 hover:underline text-slate-700 hover:bg-transparent',
         google: 'bg-white border border-neutral-300 gap-3 hover:bg-neutral-100',
       },
       size: {
-        default: 'h-10 py-2 px-4',
+        default: 'py-2 px-9',
         sm: 'h-9 px-2 rounded-md',
         lg: 'h-11 px-8 rounded-md',
       },

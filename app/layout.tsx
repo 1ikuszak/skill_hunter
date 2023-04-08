@@ -2,13 +2,13 @@ import { Inter, Open_Sans, Poppins, Roboto } from 'next/font/google';
 import './globals.css';
 
 const roboto = Roboto({
-  weight: ['400', '700'],
+  weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap',
 });
 const inter = Inter({
-  weight: ['400', '700'],
+  weight: ['400', '500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
