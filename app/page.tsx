@@ -1,9 +1,11 @@
+import { Navbar } from '@/components/Navbar';
 import Link from 'next/link';
 
 export default async function Home() {
   return (
     <>
       <main>
+        <Navbar />
         <ul className="flex gap-3">
           <li>
             <Link href="/login">login</Link>

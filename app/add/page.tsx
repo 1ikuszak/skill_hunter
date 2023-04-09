@@ -31,12 +31,11 @@ export default async function Add() {
               <TimeField name="estimated time" />
             </div>
           </div>
+          <div className="flex items-end justify-end gap-4 px-12 py-6 mt-6 bg-white rounded">
+            <Button variant="outline">Cancel</Button>
+            <Button variant="default">Add Offer</Button>
+          </div>
         </form>
-
-        <div className="flex items-end justify-end gap-4 px-12 py-6 mt-6 bg-white rounded">
-          <Button variant="outline">Cancel</Button>
-          <Button variant="default">Add Offer</Button>
-        </div>
       </div>
     </>
   );
