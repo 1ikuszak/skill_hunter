@@ -24,10 +24,10 @@ export default async function Login() {
             </div>
 
             <div className="flex flex-col mt-10 space-y-2">
-              <Button variant="default" size="default">
+              <Button variant="default" size="lg">
                 Login
               </Button>
-              <Button variant="google" size="default">
+              <Button variant="google" size="lg">
                 Login with google
               </Button>
             </div>

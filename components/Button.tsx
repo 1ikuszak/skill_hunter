@@ -8,21 +8,23 @@ import { cn } from '../lib/utils';
 import google from '../public/google_logo.svg';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus:outline-none hover:bg-slate-900 disabled:opacity-50 disabled:pointer-events-none',
+  'inline-flex items-center justify-center transition duration-150 ease-in-out rounded text-sm font-medium transition-colors focus:outline-none hover:bg-slate-900 disabled:opacity-50 disabled:pointer-events-none transition duration-150 ease-in-out',
   {
     variants: {
       variant: {
         default: 'bg-neutral-950 text-white hover:bg-neutral-800',
         destructive: 'bg-red-500 text-white hover:bg-red-600',
         outline:
-          'bg-transparent border text-dark border-dark hover:bg-transparent hover:font-bold',
-        link: 'bg-transparent underline-offset-4 hover:underline text-slate-700 hover:bg-transparent',
+          'bg-transparent border text-dark border-dark hover:bg-transparent',
+        link: 'bg-transparent underline-offset-4 text-slate-300 font-normal hover:bg-transparent hover:underline',
         google: 'bg-white border border-neutral-300 gap-3 hover:bg-neutral-100',
+        cta: 'bg-transparent font-medium text-primary hover:text-secondary hover:bg-transparent',
       },
       size: {
         default: 'py-2 px-9',
-        sm: 'h-9 px-2 rounded-md',
-        lg: 'h-11 px-8 rounded-md',
+        sm: 'py-1 px-2',
+        lg: 'px-8 h-11',
+        xs: 'py-2',
       },
     },
     defaultVariants: {

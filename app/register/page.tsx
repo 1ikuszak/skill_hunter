@@ -23,10 +23,10 @@ export default async function Register() {
             </div>
 
             <div className="flex flex-col mt-10 space-y-2">
-              <Button variant="default" size="default">
+              <Button variant="default" size="lg">
                 Register
               </Button>
-              <Button variant="google" size="default">
+              <Button variant="google" size="lg">
                 Register with google
               </Button>
             </div>
