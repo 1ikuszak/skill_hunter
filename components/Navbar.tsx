@@ -38,7 +38,7 @@ const Navbar = () => {
             <Button
               key={text}
               variant="link"
-              size="xs"
+              size="sm"
               {...linkProps}
               href={href}
             >
@@ -48,7 +48,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <Button variant="cta" size="sm">
+          <Button variant="default" size="sm">
             get started
           </Button>
         </div>

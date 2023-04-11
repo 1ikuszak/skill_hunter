@@ -1,28 +1,10 @@
 'use client';
 
-import { cva } from 'class-variance-authority';
 import Image from 'next/image';
 import { useState } from 'react';
 import defaultImg from '../../public/default_img.svg';
 
-const galleryVariants = cva('flex flex-col', {
-  variants: {
-    width: {
-      default: 'w-[800px]',
-      sm: 'w-[600px]',
-      lg: 'w-[1000px]',
-    },
-  },
-  defaultVariants: {
-    width: 'default',
-  },
-});
-
-export interface GalleryProps {
-  galleryWidth: 'default' | 'sm' | 'lg';
-}
-
-const Gallery: React.FC<GalleryProps> = ({ galleryWidth }) => {
+const Gallery: React.FC = () => {
   const [images, setImages] = useState<string[]>([
     defaultImg,
     defaultImg,
@@ -47,7 +29,7 @@ const Gallery: React.FC<GalleryProps> = ({ galleryWidth }) => {
   };
 
   const GalleryImage = ({ index }: { index: number }) => (
-    <div className="flex flex-1 transition duration-150 ease-in-out aspect-video bg-neutral-100 hover:scale-[103%] hover:bg-neutral-200">
+    <div className="flex flex-1 transition duration-150 ease-in-out aspect-video bg-slate-100 hover:scale-[103%] hover:bg-slate-200">
       <label
         htmlFor={`galleryImageInput${index}`}
         className="relative block w-full h-full"
@@ -71,7 +53,7 @@ const Gallery: React.FC<GalleryProps> = ({ galleryWidth }) => {
   );
 
   return (
-    <div className={galleryVariants({ width: galleryWidth })}>
+    <div>
       <p className="text-base text-gray-700">Image</p>
       <p className="mb-1 text-sm text-gray-700">
         The first photo will be the main photo
@@ -97,4 +79,4 @@ const Gallery: React.FC<GalleryProps> = ({ galleryWidth }) => {
   );
 };
 
-export { Gallery, galleryVariants };
+export { Gallery };

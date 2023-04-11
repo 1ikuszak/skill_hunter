@@ -4,35 +4,40 @@ import { Gallery } from '@/components/form/Gallery';
 import { NameField } from '@/components/form/NameField';
 import { PriceField } from '@/components/form/PriceField';
 import { Select } from '@/components/form/SelectField';
+import { Spacer } from '@/components/form/Spacer';
 import { TimeField } from '@/components/form/TimeField';
 
 export default async function Add() {
   return (
     <>
-      <div className="max-w-screen-lg mx-auto my-12 ">
-        <p className="text-xl font-medium">Add Offer</p>
+      <div className="max-w-5xl mx-auto my-12 ">
         <form className="flex flex-col">
-          <div className="p-12 bg-white rounded">
-            <NameField
-              name="Name"
-              placeholder="for ex. UI UX android app design"
-            />
-            <div className="flex gap-5">
+          <div className="p-12 rounded bg-[rgba(255,255,255)]">
+            <div className="max-w-md">
+              <NameField
+                name="Name"
+                placeholder="for ex. UI UX android app design"
+                className="max-w-md"
+              />
+            </div>
+            <div className="flex max-w-lg gap-5">
               <Select name="Category" placeholder="choose category" />
               <Select name="Sub-Category" placeholder="choose sub-category" />
             </div>
-            <hr className="h-px my-12 bg-neutral-200 border-0 m-[-48px]" />
-            <Gallery galleryWidth="default" />
-            <hr className="h-px my-12 bg-neutral-200 border-0 m-[-48px]" />
-            <Textarea name="description" rows={6} />
-            <hr className="h-px my-12 bg-neutral-200 border-0 m-[-48px]" />
-            <div className="flex gap-12">
+            <Spacer />
+            <Gallery />
+            <Spacer />
+            <div className="max-w-lg">
+              <Textarea name="description" rows={6} />
+            </div>
+            <Spacer />
+            <div className="flex max-w-md gap-5">
               <PriceField name="price" />
               <TimeField name="estimated time" />
             </div>
           </div>
-          <div className="flex items-end justify-end gap-4 px-12 py-6 mt-6 bg-white rounded">
-            <Button variant="outline">Cancel</Button>
+          <div className="flex items-end justify-end gap-4 px-12 py-6 mt-6 rounded bg-[rgba(255,255,255)]">
+            <Button variant="subtle">Cancel</Button>
             <Button variant="default">Add Offer</Button>
           </div>
         </form>

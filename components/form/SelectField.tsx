@@ -1,40 +1,25 @@
 'use client';
 
-import { VariantProps, cva } from 'class-variance-authority';
 import * as React from 'react';
 import { cn } from '../../lib/utils';
 
-const selectVariants = cva(
-  'px-2 py-3 leading-tight transition duration-150 ease-in-out text-gray-700 border border-transparent rounded bg-neutral-100 focus:outline-none focus:bg-white focus:border-secondary placeholder:text-sm',
-  {
-    variants: {
-      _size: {
-        default: 'w-[300px]',
-        sm: 'w-[200px]',
-        lg: 'w-[400px]',
-      },
-    },
-    defaultVariants: {
-      _size: 'default',
-    },
-  }
-);
-
 export interface SelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement>,
-    VariantProps<typeof selectVariants> {
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   name: string;
   placeholder?: string;
 }
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ placeholder, className, _size, ...props }, ref) => {
+  ({ placeholder, className, ...props }, ref) => {
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <label htmlFor={props.name}>{props.name}</label>
         <div>
           <select
-            className={cn(selectVariants({ _size, className }))}
+            className={cn(
+              { className },
+              'w-full px-2 py-3 leading-tight transition duration-150 ease-in-out text-gray-700 border border-transparent rounded bg-slate-100 focus:outline-none focus:bg-white focus:border-secondary placeholder:text-sm'
+            )}
             ref={ref}
             {...props}
             required
@@ -53,4 +38,4 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   }
 );
 
-export { Select, selectVariants };
+export { Select };

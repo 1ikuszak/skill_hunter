@@ -15,19 +15,16 @@ export default async function Register() {
             <p className="text-base">Welcome, please enter your details.</p>
           </div>
 
-          <form>
+          <form className="w-80">
             <div className="flex flex-col gap-7">
-              <Input name="name" type="text" _size="default" />
-              <Input name="email" type="text" _size="default" />
-              <Input name="password" type="password" _size="default" />
+              <Input name="name" type="text" />
+              <Input name="email" type="text" />
+              <Input name="password" type="password" />
             </div>
 
             <div className="flex flex-col mt-10 space-y-2">
               <Button variant="default" size="lg">
                 Register
-              </Button>
-              <Button variant="google" size="lg">
-                Register with google
               </Button>
             </div>
 
@@ -44,6 +41,7 @@ export default async function Register() {
             className="absolute bottom-0 left-0"
             width={216}
             src={claws}
+            priority={true}
           />
         </div>
 

@@ -1,30 +1,25 @@
-'use client';
-
+import { cn } from '@/lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
-import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
-import { cn } from '../lib/utils';
-import google from '../public/google_logo.svg';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center transition duration-150 ease-in-out rounded text-sm font-medium transition-colors focus:outline-none hover:bg-slate-900 disabled:opacity-50 disabled:pointer-events-none transition duration-150 ease-in-out',
+  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none disabled:opacity-50 disabled:pointer-events-none  data-[state=open]:bg-slate-100',
   {
     variants: {
       variant: {
-        default: 'bg-neutral-950 text-white hover:bg-neutral-800',
+        default: 'bg-slate-900 text-white hover:bg-slate-700',
         destructive: 'bg-red-500 text-white hover:bg-red-600',
-        outline:
-          'bg-transparent border text-dark border-dark hover:bg-transparent',
-        link: 'bg-transparent underline-offset-4 text-slate-300 font-normal hover:bg-transparent hover:underline',
-        google: 'bg-white border border-neutral-300 gap-3 hover:bg-neutral-100',
-        cta: 'bg-transparent font-medium text-primary hover:text-secondary hover:bg-transparent',
+        outline: 'bg-transparent border border-slate-200 hover:bg-slate-100',
+        subtle: 'bg-slate-100 text-slate-900 hover:bg-slate-200',
+        ghost:
+          'bg-transparent hover:bg-slate-100 data-[state=open]:bg-transparent',
+        link: 'bg-transparent underline-offset-4 hover:underline text-slate-900 hover:bg-transparent',
       },
       size: {
-        default: 'py-2 px-9',
-        sm: 'py-1 px-2',
-        lg: 'px-8 h-11',
-        xs: 'py-2',
+        default: 'h-10 py-2 px-4',
+        sm: 'h-9 px-2 rounded-md',
+        lg: 'h-11 px-8 rounded-md',
       },
     },
     defaultVariants: {
@@ -41,26 +36,7 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, href, variant, size, ...props }, ref) => {
-    if (variant === 'google') {
-      return (
-        <button
-          className={cn(
-            buttonVariants({
-              variant,
-              size,
-              className,
-            })
-          )}
-          ref={ref}
-          {...props}
-        >
-          <Image src={google} alt="Google" />
-          <div>{children}</div>
-        </button>
-      );
-    }
-
+  ({ className, variant, children, href, size, ...props }, ref) => {
     if (href) {
       return (
         <Link
@@ -71,7 +47,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </Link>
       );
     }
-
     return (
       <button
         className={cn(buttonVariants({ variant, size, className }))}
@@ -83,7 +58,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };

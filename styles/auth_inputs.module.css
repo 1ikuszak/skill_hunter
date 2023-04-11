@@ -2,10 +2,11 @@
   position: relative;
   border-bottom: 1px solid var(--dark-color);
   transition: border-bottom 0.4s ease-in-out;
-  width: fit-content;
+  width: 100%;
 }
 
 .form__group input {
+  width: 100%;
   padding: 0 2px;
   height: 40px;
   font-size: 16px;
