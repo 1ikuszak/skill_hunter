@@ -9,15 +9,16 @@ import {
   Euro,
   File,
   FileText,
+  Heart,
   HelpCircle,
   Image,
   Loader2,
   LucideProps,
   Menu,
   MoreVertical,
-  Pizza,
   Plus,
   Settings,
+  Star,
   Trash,
   Twitter,
   User,
@@ -45,9 +46,11 @@ export const Icons = {
   user: User,
   arrowRight: ArrowRight,
   help: HelpCircle,
-  pizza: Pizza,
   euro: Euro,
   clock10: Clock10,
+  star: Star,
+  heart: Heart,
+
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

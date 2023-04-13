@@ -9,7 +9,7 @@ export default async function Register() {
   return (
     <div>
       <div className="flex">
-        <div className="flex flex-col items-center justify-center w-1/2 h-screen">
+        <div className="flex flex-col items-center justify-center w-screen h-screen lg:w-1/2">
           <div className="flex flex-col mb-10">
             <p className="text-3xl font-bold">Create and account</p>
             <p className="text-base">Welcome, please enter your details.</p>
@@ -45,7 +45,7 @@ export default async function Register() {
           />
         </div>
 
-        <div className="flex items-center justify-center w-1/2 h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
+        <div className="items-center justify-center hidden w-1/2 h-screen lg:flex bg-gradient-to-r from-cyan-500 to-blue-500">
           <Image alt="logo" className="absolute" src={logo} />
         </div>
       </div>

@@ -15,9 +15,8 @@ export const marketingConfig: MarketingConfig = {
       href: '/add',
     },
     {
-      title: 'Documentation',
-      href: '/docs',
-      disabled: true,
+      title: 'Browse',
+      href: '/browse',
     },
     {
       title: 'Contact',

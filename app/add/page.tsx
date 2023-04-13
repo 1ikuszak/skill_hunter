@@ -37,7 +37,9 @@ export default async function Add() {
             </div>
           </div>
           <div className="flex items-end justify-end gap-4 px-12 py-6 mt-6 rounded bg-[rgba(255,255,255)]">
-            <Button variant="subtle">Cancel</Button>
+            <Button type="button" variant="subtle">
+              Cancel
+            </Button>
             <Button variant="default">Add Offer</Button>
           </div>
         </form>

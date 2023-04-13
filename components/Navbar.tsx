@@ -1,60 +1,62 @@
 'use client';
 
-import { Search } from '@/components/Searchbar';
-import { Button } from '@/components/ui/Button';
-import Image from 'next/image';
-import logo from '../public/logo.svg';
+import Link from 'next/link';
+import { useSelectedLayoutSegment } from 'next/navigation';
+import * as React from 'react';
 
-const linkProps = {
-  className: 'block mt-4 mr-4 lg:inline-block lg:mt-0 text-white-200',
-  href: '#',
-};
+import { Icons } from '@/components/icons';
+import { MobileNav } from '@/components/mobile-nav';
+import { cn } from '@/lib/utils';
+import { MainNavItem } from '@/types';
+import { Button } from './ui/Button';
 
-const links = [
-  { text: 'First Link', href: '/add' },
-  { text: 'Second Link', href: '/login' },
-  { text: 'Third Link', href: '/register' },
-  { text: 'Fourth Link', href: '#' },
-];
+interface MainNavProps {
+  items?: MainNavItem[];
+  children?: React.ReactNode;
+}
 
-const Navbar = () => {
+export function Navbar({ items, children }: MainNavProps) {
+  const segment = useSelectedLayoutSegment();
+  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
+
   return (
-    <nav className="flex items-center justify-center w-full py-2">
-      <div className="flex items-center justify-between w-full max-w-6xl">
-        <div className="flex items-center justify-center gap-2">
-          <Image src={logo} width={38} alt="Logo" />
-          <p className="text-xl font-medium">
-            <span>Skill</span>
-            <span className="text-primary">Hunter</span>
-          </p>
-        </div>
-
-        <div>
-          <Search placeholder="Jakiego serwisu dzisiaj poszukujesz?" />
-        </div>
-
-        <div className="flex items-center justify-center gap-4">
-          {links.map(({ text, href }) => (
-            <Button
-              key={text}
-              variant="link"
-              size="sm"
-              {...linkProps}
-              href={href}
+    <div className="flex md:justify-between">
+      <button
+        className="flex items-center space-x-2 l-0 md:hidden"
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      >
+        {showMobileMenu ? <Icons.close /> : <Icons.menu />}
+      </button>
+      {showMobileMenu && items && (
+        <MobileNav items={items}>{children}</MobileNav>
+      )}
+      <Link
+        href="/"
+        className="flex items-center justify-center w-full space-x-2 md:w-auto md:justify-start"
+      >
+        <Icons.logo />
+        <p className="text-xl font-semibold text-neutral-900">SkillHunter</p>
+      </Link>
+      {items?.length ? (
+        <nav className="hidden gap-6 md:flex">
+          {items?.map((item, index) => (
+            <Link
+              key={index}
+              href={item.disabled ? '#' : item.href}
+              className={cn(
+                'flex items-center text-lg font-semibold text-slate-600 sm:text-sm hover:text-slate-700',
+                item.href.startsWith(`/${segment}`) && 'text-slate-900',
+                item.disabled && 'opacity-60'
+              )}
             >
-              {text}
-            </Button>
+              {item.title}
+            </Link>
           ))}
-        </div>
-
-        <div>
-          <Button variant="default" size="sm">
-            get started
-          </Button>
-        </div>
+        </nav>
+      ) : null}
+      <div className="flex items-center justify-center hidden md:flex">
+        <Button size="sm">get started</Button>
       </div>
-    </nav>
+    </div>
   );
-};
-
-export { Navbar };
+}

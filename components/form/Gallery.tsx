@@ -11,6 +11,7 @@ const Gallery: React.FC = () => {
     defaultImg,
     defaultImg,
     defaultImg,
+    defaultImg,
   ]);
 
   const handleFileInputChange = (

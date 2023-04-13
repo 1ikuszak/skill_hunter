@@ -9,7 +9,7 @@ export default async function Login() {
   return (
     <div>
       <div className="flex">
-        <div className="flex flex-col items-center justify-center w-1/2 h-screen">
+        <div className="flex flex-col items-center justify-center w-screen h-screen lg:w-1/2">
           <div className="flex flex-col mb-10">
             <p className="text-3xl font-bold">Good to see you again</p>
             <p className="text-base">
@@ -46,7 +46,7 @@ export default async function Login() {
           />
         </div>
 
-        <div className="flex items-center justify-center w-1/2 h-screen bg-gradient-to-r from-purple-500 to-pink-500">
+        <div className="items-center justify-center hidden w-1/2 h-screen lg:flex bg-gradient-to-r from-purple-500 to-pink-500">
           <Image alt="logo" className="absolute" src={logo} />
         </div>
       </div>

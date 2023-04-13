@@ -1,9 +1,10 @@
-import { MainNav } from '@/components/Nav';
+import { Navbar } from '@/components/Navbar';
 import { marketingConfig } from '@/config/marketing';
+
 export default async function Home() {
   return (
     <>
-      <MainNav items={marketingConfig.mainNav} />
+      <Navbar items={marketingConfig.mainNav} />
     </>
   );
 }
