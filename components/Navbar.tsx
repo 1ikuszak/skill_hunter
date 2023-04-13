@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/Button';
 import { Search } from '@/components/Searchbar';
+import { Button } from '@/components/ui/Button';
 import Image from 'next/image';
 import logo from '../public/logo.svg';
 

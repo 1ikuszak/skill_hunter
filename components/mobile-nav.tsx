@@ -2,7 +2,7 @@ import { useLockBody } from '@/hooks/use-lock-body';
 import Link from 'next/link';
 import * as React from 'react';
 
-import { Icons } from '@/components/icons';
+import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { MainNavItem } from '@/types';
 
@@ -21,9 +21,6 @@ export function MobileNav({ items, children }: MobileNavProps) {
       )}
     >
       <div className="relative z-20 grid gap-6 p-4 bg-white rounded-md shadow-md">
-        <Link href="/" className="flex items-center space-x-2">
-          <Icons.logo />
-        </Link>
         <nav className="grid grid-flow-row text-sm auto-rows-max">
           {items.map((item, index) => (
             <Link
@@ -37,6 +34,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
               {item.title}
             </Link>
           ))}
+          <Button size="sm">get started</Button>
         </nav>
         {children}
       </div>

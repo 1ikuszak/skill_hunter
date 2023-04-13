@@ -2,7 +2,7 @@ import claws from '@/public/claws.svg';
 import logo from '@/public/skill_hunter.svg';
 import Image from 'next/image';
 
-import { Button } from '@/components/Button';
+import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/UserInput';
 
 export default async function Register() {

@@ -1,4 +1,3 @@
-import { Button } from '@/components/Button';
 import { Textarea } from '@/components/form/DescritptionField';
 import { Gallery } from '@/components/form/Gallery';
 import { NameField } from '@/components/form/NameField';
@@ -6,6 +5,7 @@ import { PriceField } from '@/components/form/PriceField';
 import { Select } from '@/components/form/SelectField';
 import { Spacer } from '@/components/form/Spacer';
 import { TimeField } from '@/components/form/TimeField';
+import { Button } from '@/components/ui/Button';
 
 export default async function Add() {
   return (
